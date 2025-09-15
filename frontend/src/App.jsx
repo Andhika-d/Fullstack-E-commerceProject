@@ -16,26 +16,24 @@ import Products from "./pages/Products";
 import UsersPage from "./pages/Users";
 import Orders from "./pages/Orders";
 
+import { Toaster } from "@/components/ui/toaster";
+
 function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(false); // Mobile toggle
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false); // Desktop collapse
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const location = useLocation();
 
-  // Pastikan desktop sidebar default terbuka
   useEffect(() => {
-    // Function untuk cek ukuran layar
     const handleResize = () => {
       if (window.innerWidth >= 768) {
-        setSidebarOpen(true); // desktop: open
+        setSidebarOpen(true);
       } else {
-        setSidebarOpen(false); // mobile: closed
+        setSidebarOpen(false);
       }
     };
-
-    handleResize(); // Jalankan pertama kali saat mount
-
-    window.addEventListener("resize", handleResize); // Pantau perubahan ukuran
-    return () => window.removeEventListener("resize", handleResize); // cleanup
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const navItems = [
@@ -119,7 +117,6 @@ function App() {
       <div className="flex flex-col flex-1 min-h-screen">
         {/* Navbar */}
         <header className="flex items-center justify-between bg-white shadow px-4 py-3 md:px-6">
-          {/* Hamburger mobile */}
           <button
             className="md:hidden text-gray-700"
             onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -149,11 +146,14 @@ function App() {
           </Routes>
         </main>
 
-        {/* Footer sticky */}
+        {/* Footer */}
         <footer className="bg-white shadow-md text-center text-gray-500 text-sm py-3">
           Made with by <span className="font-medium">@Andhika-D</span>
         </footer>
       </div>
+
+      {/* Toaster biar global, taro di luar layout */}
+      <Toaster />
     </div>
   );
 }
