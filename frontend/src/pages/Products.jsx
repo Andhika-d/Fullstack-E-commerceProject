@@ -38,7 +38,8 @@ const initialProducts = [
     price: "$120",
     stock: 50,
     status: "Active",
-    image: "https://via.placeholder.com/60",
+    image:
+      "https://images.unsplash.com/photo-1605408499391-6368c628ef42?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmlrZSUyMHNob2VzfGVufDB8fDB8fHww",
   },
   {
     id: 2,
@@ -47,7 +48,8 @@ const initialProducts = [
     price: "$75",
     stock: 30,
     status: "Active",
-    image: "https://via.placeholder.com/60",
+    image:
+      "https://www.adidas.co.id/media/catalog/product/cache/a2326ed7dcde4da57fee4197e095ea73/j/x/jx1969_1_apparel_photography_front_center_view_grey.jpg",
   },
 ];
 
@@ -400,7 +402,8 @@ export default function Products() {
             <div className="flex items-center gap-3">
               <img
                 src={
-                  product.image || "https://via.placeholder.com/60?text=No+Image"
+                  product.image ||
+                  "https://via.placeholder.com/60?text=No+Image"
                 }
                 alt={product.name}
                 className="w-16 h-16 rounded-lg object-cover"
