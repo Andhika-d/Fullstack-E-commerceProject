@@ -47,7 +47,7 @@ export default function Dashboard() {
     <div className="space-y-6">
       {/* Wrapper utama */}
       <div className="space-y-6 bg-gray-50 rounded-lg p-6">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-800 drop-shadow-sm mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 drop-shadow-sm mb-4">
           Dashboard Admin
         </h1>
 
